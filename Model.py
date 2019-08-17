@@ -30,28 +30,6 @@ X_train, X_test, y_train, y_test = train_test_split(dataset, response,
                                                     test_size = 0.2,
                                                     random_state = 0)
 
-## Balancing the Training Set
-#import random
-#y_train.value_counts()
-#
-#pos_index = y_train[y_train.values == 1].index
-#neg_index = y_train[y_train.values == 0].index
-#
-#if len(pos_index) > len(neg_index):
-#    higher = pos_index
-#    lower = neg_index
-#else:
-#    higher = neg_index
-#    lower = pos_index
-#
-#random.seed(0)
-#higher = np.random.choice(higher, size=len(lower))
-#lower = np.asarray(lower)
-#new_indexes = np.concatenate((lower, higher))
-#
-#X_train = X_train.loc[new_indexes,]
-#y_train = y_train[new_indexes]
-
 
 # Removing Identifiers for temporal purpose because at the end of the model we want to associate prediction to each user.
 train_identity = X_train['user']
